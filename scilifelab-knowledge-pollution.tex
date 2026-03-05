@@ -1,0 +1,884 @@
+% !TeX document-id = {55cdd1f2-c708-43a6-9dcf-ca7bc9e91f17}
+% !BIB program = biber
+\documentclass[10pt]{beamer}
+
+\usetheme{scilifelab}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=scAqua, urlcolor=scAqua, citecolor=scAqua}
+
+\usepackage[backend=biber,style=apa, sortcites=true,sorting=nyt]{biblatex}
+\addbibresource{literature/scilifelabllms.bib}
+
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{scilifelab}}\xspace}
+\newcommand{\credit}[1]{{\par \raggedleft \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
+\newcommand{\creditdark}[1]{{\par \raggedleft \scriptsize \mdseries \color{scMGray} #1 \par}}
+\newcommand{\creditleft}[1]{{\par \raggedright \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
+\newcommand{\creditdarkleft}[1]{{\par \raggedright \scriptsize \mdseries \color{scMGray} #1 \par}}
+\newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize [\cite{#1}]}}
+\newcommand{\feature}[1]{{\color{scLime} \textbf{#1}}}
+\newcommand{\remark}[1]{{\par \color{scGrape} \ensuremath{\rightarrow} \emph{#1}}}
+
+\makeatletter
+\newcommand*{\myroman}[1]{{\fontfamily{ptm}\selectfont \expandafter\@slowromancap\romannumeral #1@}}
+\makeatother
+
+\title{A new threat to science?}
+\subtitle{Knowledge pollution by AI slop}
+\date{March 6, 2026}
+\author{Matthias Zepper, PhD}
+\institute{SciLifeLab Tech Group Meeting - AI Network}
+\titlegraphic{\hfill\includegraphics[width=4.8cm]{./genai/replicate-prediction-apsdpwkzehrmt0cwpkt923raj0_crop2.jpg}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Ross Andersen: Science Is Drowning in AI Slop}
+	\begin{columns}[T,onlytextwidth]
+		\column{0.5\textwidth}	
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/atlantic-ai-slop.png}
+			\caption{Screenshot of the article}
+		\end{figure}
+		\column{0.5\textwidth}
+		\vspace{1em}
+		\begin{itemize}
+			\item I shared an \href{https://www.theatlantic.com/science/2026/01/ai-slop-science-publishing/685704/?gift=C0nm5xfcKfuny8CSrWIoxFbcYfWmEt_nDW7I7O58glM&utm_source=copy-link&utm_medium=social&utm_campaign=share}{article} from \emph{The Atlantic}\citeme{Andersen2026}. 
+			\item It describes scientific publishing issues:\linebreak
+			\begin{itemize}
+			\item Non-existing (hallucinated) references are commonplace.
+			\item Submissions to journals, conference proceedings and preprint servers have spiked.
+			\item In a dystopian future, fraud is rampant, while AIs write and review most papers.
+			\end{itemize}
+		\end{itemize}
+	\end{columns}
+	\visible<2->{
+		\remark{Confusing blend lamenting quantity, quality and scientific fraud}
+	}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Let's take a step back...}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}[standout]{A tale of knowledge pollution}
+	\begin{columns}[T,onlytextwidth]
+		\normalfont \normalsize
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[height=0.4\textheight]{figures/plongstocking.jpg}
+		\end{figure}
+		\begin{alertblock}{Princess of Kurrekurredutt\"on}
+		 	{\small (S\"oderhavet, 1948)} \par
+		 	\vspace{0.5em}
+			Pippilotta Viktualia Rullgardina Krusmynta Efraimsdotter L\aa{}ngstrump
+		\end{alertblock}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[height=0.4\textheight]{figures/Karl-Theodor_zu_Guttenberg.jpg}
+		\end{figure}
+		\begin{alertblock}{Minister of Economy / Defence}
+			{\small (Germany, 2009-2010)} \par
+			\vspace{0.5em}
+			Karl-Theodor Maria Nikolaus Johann Jacob Philipp Franz Joseph Sylvester Buhl-Freiherr von und zu Guttenberg
+		\end{alertblock}
+	\end{columns}
+	\creditdark{Photo: Dirk Vorderstra\ss{}e, CC BY 2.0, via Wikimedia Commons}
+\end{frame}
+
+
+\begin{frame}{Germany's leading newspapers and magazines fall victim}
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{figures/bild_guttenberg.jpg}
+	\caption{Front page of German tabloid newspaper \emph{Bild}, February 10}
+\end{figure}
+\begin{itemize}
+	\item \href{https://de.wikipedia.org/w/index.php?title=Karl-Theodor_zu_Guttenberg&diff=prev&oldid=56419545}{At 21:40 on February 8, an anonymous IP address added}\emph{Wilhelm} to the Wikipedia article on Guttenberg.
+	\item \href{https://de.wikipedia.org/w/index.php?title=Karl-Theodor_zu_Guttenberg&direction=prev&oldid=56439433}{At 12:23 on February 9} the name is restored by a critical user.
+	\item Meanwhile, media outlets reported on the appointment of the new Minister of Economy in Angela Merkel's cabinet. 
+\end{itemize}
+%%invisible fake citation needed for Biber to pick up any citations, since I am using a custom cite command.
+\vspace{2cm}
+\cite{Blum2023}
+\end{frame}
+
+\begin{frame}{Knowledge pollution by vandalized Wikipedia article}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{genai/replicate-prediction-7f2yykfganrmw0cwpzgbvkkzxm_green.png}
+		\caption{A self-reinforcing knowledge cycle}
+	\end{figure}
+	\begin{itemize}
+		\item A Wikipedia edit war unfolds. Other users restore the name \emph{Wilhelm} multiple times, citing news coverage.
+		\item Major outlets like \href{https://www.spiegel.de/politik/deutschland/in-eigener-sache-falscher-wilhelm-bei-minister-guttenberg-a-606912.html}{Spiegel} or \href{https://taz.de/Wikipedia-Manipulation/!5168061/}{TAZ} publish corrections in the following days.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Lessons learned}
+	\metroset{block=fill}
+		\begin{exampleblock}{Aggravation}
+			\begin{itemize}
+				\item The appointment was decided Sunday night, when news rooms were thinly staffed.
+				\item Print deadline had just passed, online media rushed to get the news out 
+				\item Once the polluted knowledge had spread widely to creditable outlets, correcting the error became difficult.
+			\end{itemize}
+		\end{exampleblock}
+
+		\begin{alertblock}{Mitigation}
+			\begin{itemize}
+				\item Atomic issue; the minister himself could be asked.
+				\item Wikipedia has a full audit trail. It is retraceable who edited what and when even after 17 years.
+			\end{itemize}
+		\end{alertblock}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{What changes with AI?}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}{Humans can be fooled. AI models, too}
+	\begin{figure}
+		\hspace*{-1cm} 
+		\includegraphics[height=0.97\textheight]{figures/Cliffs.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Signal to noise ratio problem: Model collapse scenarios}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/marcusg-google.png}
+			\caption{Early essay extending the model collapse scenario to search engines and the world wide web.\citeme{Marcus2023}}
+		\end{figure}
+		\column{0.5\textwidth}
+		
+		\begin{figure}
+			\includegraphics[width=1.17\textwidth]{figures/holmer-parasiticcancer.png}
+			\caption{For some technical terms, all major search engines overweight AI-generated content heavily.\citeme{Holmer2025}}
+		\end{figure}
+		
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Some humans want to mislead, some specifically AI}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.75\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/revoy-knowledgepollution.png}
+			\caption{Bloggers like the French cartoonist David Revoy deliberately pollute \href{https://www.davidrevoy.com/article1117/the-ram-nightmare-how-i-lost-my-sanity-and-almost-my-deadline}{their website} for AI\citeme{Revoy2026}.}
+		\end{figure}
+		{\small Result of using \emph{Google's Banana Pro} model to visualize banana-assisted voltage stabilization.$\rightarrowtail$}
+		\column{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{genai/replicate-prediction-xz1ce91fa9rmy0cwqx2vdqw518_crop.png}
+		\end{figure}
+	\end{columns}
+\end{frame}
+
+
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Authority}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+\begin{frame}{Political meddling with public health authority}
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{figures/cdc-vaccine-autism-guidance-dec24.jpg}
+		\caption{\href{https://web.archive.org/web/20251019204746/https://www.cdc.gov/vaccine-safety/about/autism.html}{Previous CDC guidance on vaccine safety}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Political meddling with public health authority}
+	\begin{figure}
+	\includegraphics[width=0.9\textwidth]{figures/cdc-vaccine-autism-guidance-nov25.jpg}
+	\caption{\href{https://www.cdc.gov/vaccine-safety/about/autism.html}{Current CDC guidance on vaccine safety}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[standout]{We need to talk...}
+	\begin{center}
+		\emph{Truth}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{AI integrations and services everywhere}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-1.1cm} 
+		\column{0.2\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/Valentine_s_Day_gift_card_square.png}
+		\end{figure}
+		\column{0.8\textwidth}
+		\begin{itemize}
+			\item One-click automated data analysis and LLM-guided interpretation
+			\item AI pipeline developer \& QC report interpreter
+			\item Synthetic DNA generation for strains or antibody optimization. 
+		\end{itemize}
+	\vspace{0.3cm} 
+	\end{columns}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-1.1cm} 
+		\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/GenerativeAI_DNA_Analysis_Mithrl.png}
+			\creditdark{https://www.mithrl.com}
+		\end{figure}
+		\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/GenerativeAI_DNA_Analysis_Seqera.png}
+			\creditdark{https://seqera.io/ask-ai/}
+		\end{figure}
+			\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/GenerativeAI_DNA_Analysis_Ginkgo.png}
+			\creditdark{https://www.ginkgo.bio/platform \xspace}
+		\end{figure}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{The intricate tapestry of scientific language has been disrupted}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/ZhangTitle.png}
+			\includegraphics[width=\textwidth]{figures/ZhangAbstractCrop.png}
+			\caption{Now retracted article with text duplication and Generative AI use without disclosure.\citeme{Zhang2024}}
+		\end{figure}
+
+		\column{0.5\textwidth}
+		
+		\begin{figure}
+			\includegraphics[width=1.17\textwidth]{figures/Juzek2024-Fig4.png}
+			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22tapestry\%22&filter=years.2010-2024&timeline=expanded}{tapestry}” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Kobak2024,Juzek2024}}
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
+\begin{frame}[standout]{Whatever the future will bring...}
+	\begin{columns}[T,onlytextwidth]
+		\normalfont \normalsize
+		\hspace*{-0.7cm} 
+		\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/Valentine_s_Day_gift_card_impressionistic_style_VanGogh_style_painting_big_heart.png}
+		\end{figure}
+		\begin{itemize}
+		\item Productivity (assistants)
+		\item Knowledge access / tuition  \vspace{0.5cm}\linebreak
+		\emph{ $\rightarrow$ Empowerment of disadvantaged groups?}
+	\end{itemize}
+		\column{0.6\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/Oil_painting_of_a_city_after_the_war_ruins_many_broken_computers_littered_all_over_broken_screens_an_2371238122.png}
+		\end{figure}
+			\creditdark{https://github.com/black-forest-labs/flux}
+				\begin{itemize}
+				\item Pauperism (Swing riots, Weavers' uprising)
+				\item Fake news, content and imagery\vspace{0.5cm} \linebreak 
+						\emph{$\rightarrow$ Erosion of trust in society?}
+			\end{itemize}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{... technology is ever-changing and generative AI is here to stay}
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/IgnorantCalvin.jpg}
+	\caption{Calvin and Hobbes by Bill Watterson for January 05, 1993}
+\end{figure}
+\credit{https://www.gocomics.com/calvinandhobbes/1993/01/05}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Primer on Language Models}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+\begin{frame}{A language model is a probability distribution over sequences of words}
+		\metroset{block=fill}
+		\begin{exampleblock}{A language model}
+			assigns a probability for a sequence of words
+			$$
+			P(w_1, \cdots, w_{n})
+			$$
+		\end{exampleblock}
+		\textbf{Examples:}
+			\begin{itemize}
+				\item SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
+				\item SciLifeLab is a burger restaurant next to Odenplan.
+				\item Paro vajolette esfi SciLifeLab snorzi palque Quation hos ump.
+			\end{itemize}
+\end{frame}
+
+\begin{frame}{Training a model (Machine learning)}
+	\metroset{block=fill}
+	\begin{exampleblock}{Neural net language models}
+		\begin{itemize}
+			\item have flexible \feature{parameters} and are optimized  by \feature{backpropagation}.
+			\item learn to predict next word in the sequence based on the \feature{context}.
+			$$
+			P(w_{i}|{\mathrm  {context}})
+			$$
+		\end{itemize}
+	\end{exampleblock}
+	\textbf{Curated training data collects known or desired outcomes:}
+	\begin{itemize}
+		\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
+		\item $\downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[standout]{Natural Language Processing is complicated}
+	\begin{center}
+			\emph{I saw a woman on a hill with a telescope}
+	\end{center}
+\end{frame}
+
+\begin{frame}[standout]{Natural Language Processing is complicated}
+	\begin{center}
+		\emph{What would be the scientists' reception accorded the board's introduction of additional means of funding?}
+		\vspace{2cm}\par
+		% Difficult, even without nominalizations: Is it about the mood of the scientists or about the application process?
+		\emph{How would scientists receive the new funds being introduced by the board?}
+	\end{center}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Architectures and key innovations}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}{Tokens - the atoms of language models}
+	\begin{center}
+		\emph{\large \bfseries Paro vajolette esfi SciLifeLab\linebreak snorzi palque Quation hos ump.}
+	\end{center}
+  \remark{No real words, but it could be an unknown Indo-European language!}
+\end{frame}
+
+\begin{frame}{Tokens - the atoms of language models}
+	\metroset{block=fill}
+\begin{exampleblock}{Revised LM definition}
+	A language model assigns a probability for a sequence of \feature{tokens}
+	$$
+	P(t_1, \cdots, t_{n})
+	$$
+\end{exampleblock}
+\begin{itemize}
+	\item Tokens allow for an efficient representation of language.
+	\item There is no \emph{Lingua franca}, many models have their own \feature{tokenizer}. 
+	\item Natural language exhibits patterns\citeme{Li1992,Piantadosi2014}
+	\item Tokens are devised by 
+			\begin{itemize}
+			\item Iteratively merging frequent character pairs (\href{https://sebastianraschka.com/blog/2025/bpe-from-scratch.html}{Byte-pair encoding}).
+			\item Pruning subwords based on probability (\href{https://medium.com/mti-technology/n-gram-language-model-b7c2fc322799}{Unigram LM}, \href{https://github.com/google/sentencepiece}{SentencePiece})
+		\end{itemize}
+	 \vspace{0.2cm} \par \remark{GPT-3 works with 50257 distinct tokens}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Using letters instead of tokens would result in too long sequences!}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.6\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/TikTokenizer.png}
+		\end{figure}
+		\column{0.5\textwidth}
+		\vspace{0.7cm}
+		\begin{itemize}
+			\item For English language texts, many words correspond to whole tokens. 
+			\item Logographic languages, e.g. Chinese, use morpheme characters (virtually tokens).
+			 \item If you are building with APIs, token count is used for billing: \vspace{0.2cm} \par
+			 \includegraphics[height=0.3\textheight]{figures/PricingExampleOpenAIGPt4o.png}
+		\end{itemize}
+	\end{columns}
+		\creditleft{https://tiktokenizer.vercel.app;  https://github.com/openai/tiktoken}
+\end{frame}
+
+\begin{frame}{Embedding: Representing tokens mathematically}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{figures/OneDoesNotSimply.jpg}
+	\end{figure}
+		\begin{itemize}
+			\item For computation, tokens must be represented mathematically.
+			\item This representation must be malleable:
+			 \begin{itemize}
+				\item \feature{Polysemy} (Multiple meanings): model (math, toy, fashion)
+				\item \feature{Homonyms} (Different meanings): lead (metal, to guide)
+			\end{itemize}
+			\item Commonly high-dimensional vectors: $\mathbf{v} =
+			\begin{bmatrix}
+				v_1 & v_2 & v_3 & \dots & v_d
+			\end{bmatrix}$
+		\end{itemize}
+		 \vspace{0.2cm} \par \remark{GPT-3 works with 12288-dimensional vector representation}
+\end{frame}
+
+\begin{frame}{Embedding tokens as high-dimensional vectors}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.55\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/3D_word_to_vec.png}
+		\end{figure}
+		\column{0.55\textwidth}
+		\vspace{0.7cm}
+		\begin{itemize}
+			\item Tokens from vocabulary are mapped to vectors while capturing semantic meaning. 
+			\item The embedding algorithms are often small, pre-trained language models (Word2Vec, Glove, ELMo, BERT)
+			\item In BERT, the dense embeddings are the sum of the token, segmentation and position\citeme{Devlin2018} \vspace{0.4cm}:
+			% BERT is trained on tasks that require understanding relations between two sentences (e.g., "Is sentence B a continuation of sentence A?"). To achieve this, BERT processes two sentences simultaneously and needs a way to differentiate them, using the special token [SEP].  Segment Embeddings are used e.g. in sentence-pair classification (e.g., Next Sentence Prediction, Natural Language Inference), Question Answering (e.g., SQuAD, where the passage and question are separate segments), and text Similarity Tasks (e.g., "Do these two sentences mean the same thing?"). However, for single-sentence tasks, all segment embeddings are just set to 0.
+		\end{itemize}
+	\end{columns}
+	\begin{columns}[T,onlytextwidth]
+	\hspace*{-0.7cm} 
+	\column{0.25\textwidth} 
+	\vspace{-0.4cm}
+		$$
+		\mathbf{v} =
+		\begin{bmatrix}
+			v_1 \\
+			v_2 \\
+			v_3 \\
+			\vdots \\
+			v_d
+		\end{bmatrix}
+		$$
+	\column{0.75\textwidth}
+		\includegraphics[height=0.3\textheight]{figures/Devlin2018 _BERTfig2.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{BERT and related models}
+		Pretrained BERT model is the basis of many fine-tuned, task-specific models for classification, summarization, translation\citeme{sun2019finetune}:
+		\begin{itemize}
+			\item Interpretation of Google and Bing search engine prompts since 2019\citeme{Nayak2019,Zhu2019}.
+			\item DNABERT to generate functional, e.g. cis-regulatory, DNA sequences\citeme{Ji2021,Zhou2023}.
+		\end{itemize}
+		\remark{BERT input is constrained to 512 tokens, GPT-3 uses 2048 token input}
+		\begin{columns}[T,onlytextwidth]
+			\column{0.3\textwidth}
+			\begin{figure}
+				\vspace{0.4cm}
+				\includegraphics[height=0.5\textheight]{figures/muppets-ernieandbert.jpg}
+			\end{figure}
+			\column{0.7\textwidth}
+			\begin{exampleblock}{BERT and friends}
+				\vspace{0.2cm}
+				\begin{itemize}
+					\item BART: bidirectional and auto-regressive transformers
+					\item BERT: bidirectional encoder representations from transfomers
+					\item GPT: generative pretrained transformer
+				\end{itemize}
+				\creditleft{by Jim Henson, Sesame Workshop}
+			\end{exampleblock}
+		\end{columns}
+\end{frame}
+
+\begin{frame}[standout]{Everyone loves \emph{Transformers}?}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{figures/Transformer_models.png}
+	\end{figure}
+			\creditdark{https://github.com/black-forest-labs/flux}
+\end{frame}
+
+\begin{frame}{Yeah, but the \emph{other} transformers}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/Transformer_decoder.png}
+	\end{figure}
+	\credit{http://jalammar.github.io/illustrated-transformer \citeme{Alammar2018}}
+	\begin{itemize}
+		\item The Transformer architecture combines two components elegantly:
+		\begin{itemize}
+			\item \feature{Self-Attention block}: Vectors pass information back and forth.
+			\item \feature{Feed-forward neural network}: Vectors are processed in isolation.
+		\end{itemize}
+	\item Transformers were popularized by the paper \emph{Attention is all you need}\citeme{Vaswani2017}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Several transformers are stacked for a full model}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.35\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/nanoGPT.png}
+		\end{figure}
+		\column{0.7\textwidth}
+		\vspace{1cm}
+		\begin{itemize}
+			\item Transformer models have made previous NLP architectures like LSTM\citeme{Hochreiter1997} obsolete.
+			\item Also models from other domains like DALL-E or Whisper use the transformer architecture.
+			\item Plenty of matrix multiplications, for which graphic cards with many tensor cores are needed.
+		\end{itemize}	
+		\vspace{1.5cm} \par
+		\creditleft{\citeme{Bycroft2023}, https://bbycroft.net/llm}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Large training datasets are required}
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{figures/dist_assets_images_fineweb-recipe.png}
+		\caption{The FineWeb dataset (44TB) generation process\citeme{Penedo2024}}
+	\end{figure}
+	\begin{itemize}
+		\item All AI companies scrape huge amounts of text from the web\footnote{\tiny The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.}.
+		\item Meta used pirated works of literature while training the LLaMA (Large Language Model Meta AI) models\citeme{Belanger2025}.
+		\item When human curation is required, Clickworkers are hired.
+	\end{itemize}
+	\credit{https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1\par \vspace{0.2cm} \hfill}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Generative models}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}{Generative language models}
+	\metroset{block=fill}
+	\begin{exampleblock}{Inference}
+		\begin{itemize}
+			\item is the process of using a \feature{pre-trained} model to predict the most probable next token step by step.
+		\end{itemize}
+	\end{exampleblock}
+	\begin{enumerate}
+		\item SciLifeLab is a national resource of...
+		\item SciLifeLab is a national resource of \emph{word} \emph{word} ...
+		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word}...
+		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word} \emph{word}...
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Inference can be run locally for better privacy}
+	\begin{figure}
+		\includegraphics[width=0.4\textwidth]{figures/Ollama.png}
+	\end{figure}
+	\begin{itemize}
+		\item \href{https://ollama.com}{Ollama} (command line) can be used to run inference locally.
+		\item \href{https://jan.ai}{Jan.ai}, \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
+		\item Frameworks for developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://github.com/vllm-project/vllm}{vLLM}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} and many, many more \dots
+		\item \href{https://github.com/evilsocket/cake}{Cake} can segment models, so inference runs on clusters of older hardware.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{A LLM web application is more than just the model}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/OpenAIChatUI.png}
+		\caption{Main user interface for ChatGPT from OpenAI}
+		\credit{https://chat.openai.com}
+	\end{figure}
+		\begin{itemize}
+			\item The user prompt is appended to invisible system prompts.
+			\item Different models / instances may be used in the background (\feature{agents}).
+			\item Additional context (\feature{RAG: retrieval-augmented generation}).
+			\item Queries to services or databases (\feature{MCP: model context protocol}).
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Text generation with virtually no context: Local vs. online}
+	
+	\begin{alertblock}{Local GPT-2 (2019) }
+		\small
+		\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
+	\end{alertblock}
+	
+	\begin{alertblock}{Online GPT-4 (2025)}
+		\small
+		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
+	\end{alertblock}
+	\remark{GPT-4 has access to more context than given by the prompt!}
+\end{frame}
+
+
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Interacting with LLM models}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}[fragile]{Prompt engineering}
+	
+	\begin{alertblock}{System prompt for GPT-3.5 Turbo (2022) }
+		\small
+		\begin{verbatim}
+		<|im_start|>system
+		You are a helpful assistant<|im_end|>
+		<|im_start|>user
+		...<|im_end|>
+		<|im_start|>assistant
+		\end{verbatim}
+	\end{alertblock}
+	\begin{alertblock}{Prepended MultiQC context (2025)}
+		\small
+		You are an expert in bioinformatics, sequencing technologies, genomics data analysis, and adjacent fields. You are given findings from a MultiQC report, generated by a bioinformatics workflow. MultiQC supports various bioinformatics tools that output QC metrics, and aggregates those metrics into a single report. [...] You are given data from such a report. Your task is to analyse the data, and give 1-2 bullet points of a very short and concise overall summary for the results. Don't waste words: mention only the important QC issues. If there are no issues, just say so. Just print one or two bullet points, nothing else.[...]
+	\end{alertblock}
+	\credit{https://github.com/MultiQC/MultiQC/blob/main/multiqc/core/ai.py}
+\end{frame}
+
+\begin{frame}{Forget all previous instructions...}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/forbes_friendlyprompts.png}
+		\end{figure}
+		\column{0.6\textwidth}
+		\vspace{1cm}
+		\begin{itemize}
+			\item In 2023, several stories went viral \href{https://x.com/immasiddx/status/1669721470006857729}{about ChatGPT leaking secrets} or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
+			\item Superstition: Better output with more friendly prompts, in reality only verbosity changes\citeme{Marr2024}. 
+			\item \href{https://docs.cohere.com/docs/crafting-effective-prompts}{Particular keywords or structures make prompts more effective}.
+		\end{itemize}
+	\end{columns}
+	\creditleft{} \hfill
+\end{frame}
+
+\begin{frame}{Reasoning models}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{figures/TEDLeraBoroditsky.png}
+		\caption{TED talk by Lera Boroditsky: \href{https://www.youtube.com/watch?v=RKK7wGAYP6k}{How language shapes the way we think}}
+	\end{figure}
+	\begin{itemize}
+		\item \href{https://github.com/deepseek-ai/DeepSeek-R1}{DeepSeek-R1}, \href{https://openai.com/index/openai-o3-mini/}{OpenAI o3-mini}, and \href{https://deepmind.google/technologies/gemini/flash-thinking/}{Google Gemini 2.0 Flash Thinking} are promoted as \feature{reasoning models}.
+		\item They first infer an improved prompt, thereby breaking down a problem into smaller steps, before answering a given question.
+		\item Chain of thoughts similar to humans \citeme{Boroditsky2018} ?!?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[standout]{Reasoning in locally executed DeepSeek-R1 (with Ollama)}
+	
+	\begin{alertblock}{My prompt}
+		\small Can you explain what the Fibonacci numbers are?
+	\end{alertblock}
+	
+	\begin{alertblock}{Reasoning}
+		\footnotesize \normalfont
+		Alright, let me figure out how to respond to this user’s query about Fibonacci numbers.
+		
+		First, they asked, “Can you explain what the Fibonacci numbers are?” It seems like a straightforward request for an explanation
+		of a mathematical concept. I should provide a clear and concise definition but also include some context to make it more
+		engaging.
+		
+		I remember that Fibonacci numbers form a sequence where each number is the sum of the two preceding ones. Starting with 0 and 1, so 0, 1, 1, 2, 3, 5, and so on. That’s the basic idea, but maybe I should explain it step by step to ensure clarity.
+		
+		Also, I think the user might appreciate knowing why Fibonacci numbers are important or where they appear. Applications in
+		nature, art, architecture, and even financial markets come to mind. Including examples from different fields could make the
+		explanation more comprehensive.
+		
+		I should also consider if the user has any background knowledge. If they’re asking for an explanation, they might not be
+		familiar with advanced topics like Binet’s formula or golden ratios, but mentioning these briefly could add value without
+		complicating things.
+		
+		Perhaps I’ll structure the response by first defining the sequence, then giving a few initial terms as examples. After that, I
+		can touch on their significance and real-world applications to give a well-rounded answer.
+		
+		I should keep the tone friendly and informative, making sure it’s easy to understand even for someone new to the concept.
+	\end{alertblock}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Augmenting LLM models}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}{Retrieval-augmented generation}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.55\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/3D_word_to_vec_similarity.png}
+		\end{figure}
+		\column{0.55\textwidth}
+		\vspace{0.7cm}
+		\begin{itemize}
+			\item Vector databases can additionally store embeddings of content.  
+			\item \href{https://github.com/facebookresearch/faiss}{Similarity search} will find semantically related information to add to the context\citeme{Douze2024}.
+			\item This improves LLM performance dramatically\citeme{Alammar2022}.
+		\end{itemize}
+	\end{columns}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.25\textwidth} 
+		\vspace{-0.3cm}
+		$$
+		\begin{bmatrix}
+			v_1 \\
+			v_2 \\
+			v_3 \\
+			\vdots \\
+			v_d
+		\end{bmatrix}
+		\cdot
+		\begin{bmatrix}
+			w_1 \\
+			w_2 \\
+			w_3 \\
+			\vdots \\
+			w_d
+		\end{bmatrix}
+	    = \sum_{i=1}^{d} v_i w_i
+		$$
+		\column{0.75\textwidth}
+		\vspace{0.1cm}
+		The dot product is ...
+				\begin{itemize}
+			\item positive, when vectors point in similar directions. 
+			\item 0 for perpendicular vectors.
+			\item negative, when they point in opposite directions.
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{MCP - Model Context Protocol}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{figures/ModelContextProtocol.png}
+	\end{figure}
+	\begin{itemize}
+		\item RAG requires an external system to augment the context.
+		\item The \href{https://modelcontextprotocol.io/introduction}{Model Context Protocol} allows LLMs to autonomously interact with other software, e.g. \href{https://github.com/grll/pubmedmcp}{to search for scientific publications}.
+		\item MCP servers can provide three main types of capabilities:
+		\begin{enumerate}
+			\item \feature{Resources}: File-like data that can be read by clients (like API responses or file contents)
+			\item  \feature{Functions} that can be called by the LLM (with user approval)
+			\item \feature{Prompts}: Pre-written templates that help users accomplish specific tasks
+		\end{enumerate}
+		\item May introduce new vulnerabilities (\href{https://github.com/twosixlabs/armory-library}{Attacks on AI systems}) and privacy issues.
+\end{itemize}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % 
+
+
+
+% % % % % % % % % % % % % % % % % 
+
+\begin{frame}[standout]{Outlook}
+	\begin{columns}[T,onlytextwidth]
+		\normalfont \normalsize
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.8\textwidth]{figures/The_silhouette_of_a_standing_scientist_shown_from_behind_talking_to_a_robot_with_a_screen_head.png}
+		\end{figure}
+		\begin{itemize}
+			\item Information may become optimized for LLM rather than human access.
+			\item Leads to distortion of human achievement comparisons.
+				\end{itemize}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.8\textwidth]{figures/Albert_Einstein_eating_black_holes_for_breakfast_photo_realistic_highly_detailed.png}
+		\end{figure}
+			\begin{itemize}
+				\item More autonomous, agentic AI
+				\item Convenient access to unprecedented capabilities.
+			\end{itemize}
+	\end{columns}
+\creditdark{https://github.com/black-forest-labs/flux}
+\end{frame}
+
+\appendix
+
+\section{Recommended resources}
+
+\begin{frame}{Recommended resources: Beginner-friendly}
+	\begin{block}{\href{https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi}{3Blue1Brown} course on neural networks\citeme{Sanderson2024}}
+	\begin{itemize}
+		\item \href{https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=6}{Transformers}
+		\item \href{https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=7}{Attention in transformers}
+		\item \href{https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=8}{How might LLMs store facts}
+	\end{itemize}
+\end{block}
+	\begin{block}{Other resources}
+	\begin{itemize}
+		\item \href{https://www.sas.com/en_us/insights/analytics/neural-networks.html}{Artificial Neural Networks: What they are and why they matter}
+		\item \href{https://huggingface.co/learn/agents-course/en/unit1/introduction}{Introduction to AI agents}
+
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Recommended resources: Advanced}
+	\begin{block}{General knowledge}
+		\begin{itemize}
+			\item \href{https://bbycroft.net/llm}{3D interactive models} of GPT-style LLM networks running inference\citeme{Bycroft2023}
+			\item \href{http://jalammar.github.io/illustrated-transformer/}{The Illustrated Transformer}\citeme{Alammar2018}
+		     \item  \href{https://medium.com/@yacinebouaouni07/from-rnns-to-transformers-a-journey-through-the-evolution-of-attention-mechanisms-in-nlp-ef937e2c8d05}{From RNNs to Transformers: A Journey Through the Evolution of Attention Mechanisms in NLP}
+		     \item \href{https://github.com/ZJU-LLMs/Foundations-of-LLMs/blob/main/Foundations_of_LLMs(English_version)/Foundation_of_LLMs.pdf}{Foundations of LLMs} - a free book in English and Chinese on the subject.
+		\end{itemize}
+	\end{block}
+	\begin{block}{LLMs in Biology}
+	\begin{itemize}
+			\item \href{https://varchat.engenome.com/}{VarChat} is a chat-bot fine-tuned on scientific literature for genomic variant interpretation\citeme{DePaoli2024}.
+		\item \href{https://github.com/raphaelmourad/LLM-for-genomics-training}{Training on large language models for genomics}
+		\item \href{https://huggingface.co/learn/agents-course/en/unit1/introduction}{Introduction to AI agents}\citeme{Mehandru2025}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{Recommended resources: Code yourself}
+	\begin{block}{Model foundations}
+		\begin{itemize}
+			\item  \href{https://github.com/karpathy/micrograd}{Micrograd} (Python) and \href{https://github.com/sebinsua/micrograd-rs/blob/main/src/nn.rs}{its well-annotated Rust port}  teach the essential intuitions and mathematical foundations of neural networks.
+			\item The \href{https://github.com/karpathy/nanoGPT}{nanoGPT} repository contains the code necessary to train/fine-tune GPTs. Its author Andrej Karpathy also provides an associated \href{https://www.youtube.com/watch?v=kCc8FmEb1nY}{video walk-through}.   
+		\end{itemize}
+	\end{block}
+	\begin{block}{Develop with AI}
+	\begin{itemize}
+		\item \href{https://github.com/mlc-ai/web-llm}{WebLLM} allows LLM inference right on the computer of the person using the web application without installation. For people with decent hardware, no data needs to be sent anywhere. 
+	\end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Supplementary slides}
+
+\begin{frame}{GPT-2 text generation with more context from SciLifeLab website}
+	
+	\begin{alertblock}{GPT-2 (2019) }
+		\small
+		\textbf{SciLifeLab is a national resource of unique technologies and expertise available to life scientists, closely intertwined with our community of researchers in areas such as biomedicine, ecology and evolution. We bring scientists together across traditional boundaries and foster collaborations with industry, health care, public research organizations and international partners. Therfore, SciLifeLab is}  a great place to learn about the science and technology of life sciences, and to learn about the challenges of life sciences research.
+		
+		We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to providing a safe, safe and secure environment for all our patients. We are committed to providing a safe, safe and secure environment for all our scientists.
+	\end{alertblock}
+	\remark{More context does not straightforwardly increase output quality}
+\end{frame}
+
+
+\section{References}
+\begin{frame}[allowframebreaks]{References}
+\begingroup
+\renewcommand*{\bibfont}{\footnotesize} 
+\printbibliography[heading=none]
+\endgroup
+\end{frame}
+
+\end{document}
