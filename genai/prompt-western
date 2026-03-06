@@ -1,0 +1,63 @@
+Create a high-resolution, scientifically accurate Western blot figure formatted as a journal-style multi-lane image on a white background.
+
+Overall layout:
+
+One molecular weight ladder on the far left.
+
+Four experimental groups labeled with Roman numerals across the top: I, II, III, IV.
+
+Each group contains three biological replicates (3 lanes per group), clearly separated by subtle spacing.
+
+Total lanes: Ladder + 12 sample lanes.
+
+Proteins shown (stacked vertically as separate blot panels):
+
+Top panel: Fantasin (strongly overexpressed in treatment groups)
+
+Middle panel: Fictional regulatory protein “Cyclomodulin-X” (anti-cyclical expression relative to Fantasin)
+
+Bottom panel: β-Actin (loading control)
+
+Molecular weight details:
+
+Include a realistic prestained protein ladder with clearly labeled molecular weights on the left side (e.g., 150 kDa, 100 kDa, 75 kDa, 50 kDa, 37 kDa, 25 kDa, 20 kDa).
+
+Fantasin band positioned at approximately 75 kDa.
+
+Cyclomodulin-X band positioned at approximately 50 kDa.
+
+β-Actin band positioned at approximately 42 kDa.
+
+Expression patterns:
+
+Group I (Control): Low Fantasin expression, high Cyclomodulin-X expression.
+
+Group II (Mild Treatment): Moderate Fantasin expression, moderately reduced Cyclomodulin-X.
+
+Group III (Strong Treatment): Strong Fantasin overexpression (dark, thick bands), very low Cyclomodulin-X.
+
+Group IV (Max Treatment): Very strong Fantasin overexpression (very dark bands), nearly absent Cyclomodulin-X.
+
+β-Actin bands should be consistent intensity across all lanes (uniform loading control).
+
+Visual style:
+
+Realistic chemiluminescent Western blot appearance (black background membrane with white bands, or inverted grayscale scientific style).
+
+Bands should have slight natural variation in thickness and intensity across replicates.
+
+Slight background noise consistent with authentic blot imaging.
+
+Clean, publication-quality layout similar to a figure from a peer-reviewed molecular biology journal.
+
+Labels:
+
+Protein names clearly labeled on the left of each panel.
+
+Molecular weights aligned with the ladder.
+
+Roman numeral group labels centered above each set of three lanes.
+
+Include a simple figure title at the top: “Western Blot Analysis of Fantasin and Cyclomodulin-X Expression”.
+
+Do not include any institutional logos or identifiable data.
