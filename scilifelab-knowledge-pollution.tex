@@ -34,10 +34,11 @@
 
 \title{A new threat to science?}
 \subtitle{Knowledge pollution by AI slop}
-\date{March 6, 2026}
+\date{March 11, 2026}
 \author{Matthias Zepper, PhD}
-\institute{SciLifeLab Tech Group Meeting - AI Network \par
-\href{https://github.com/MatthiasZepper/SciLifeLab_KnowledgePollution}{GitHub: MatthiasZepper/SciLifeLab\_KnowledgePollution}}
+\institute{National Genomics Infrastructure Sweden, SciLifeLab \par\vfill\par
+\includegraphics[width=1.5cm]{./additional_graphics/github_logo.png} \linebreak
+\href{https://github.com/MatthiasZepper/SciLifeLab_KnowledgePollution}{MatthiasZepper/SciLifeLab\_KnowledgePollution}}
 \titlegraphic{\hfill\includegraphics[width=4.8cm]{./genai/replicate-prediction-apsdpwkzehrmt0cwpkt923raj0_crop2.jpg}}
 
 \begin{document}
@@ -137,8 +138,8 @@
 
 		\begin{block}{Mitigation}
 			\begin{itemize}
-				\item Atomic issue; the minister himself could be asked.
-				\item Wikipedia has a full audit trail. It is retraceable who edited what and when even after 17 years.
+				\item The minister himself could be asked.
+				\item Wikipedia has a full audit trail. Every edit is recorded and traceable, even after 17 years.
 			\end{itemize}
 		\end{block}
 \end{frame}
@@ -213,16 +214,18 @@
 	\begin{columns}[T,onlytextwidth]
 		\normalfont \normalsize
 		\hspace*{-0.7cm} 
-		\column{0.5\textwidth}
-		\begin{exampleblock}{Accuracy}
+		\column{0.6\textwidth}
+		\begin{exampleblock}{Accuracy axis}
+		{\footnotesize false $\rightarrow$ oversimplified $\rightarrow$ incomplete $\rightarrow$ accurate}
 			\begin{figure}
-				\includegraphics[width=\textwidth]{figures/grid-slop.png}
+				\includegraphics[width=0.438\paperwidth]{figures/grid-slop.png}
 			\end{figure}
 		\end{exampleblock}
 		\column{0.5\textwidth}
-		\begin{exampleblock}{Carelessness}
+		\begin{exampleblock}{Intentionality axis}
+		{\footnotesize careless $\rightarrow$ reckless $\rightarrow$ deliberate $\rightarrow$ malicious}
 			\begin{figure}
-				\includegraphics[width=0.915\textwidth]{figures/grid-pollution.png}
+				\includegraphics[width=0.4\paperwidth]{figures/grid-pollution.png}
 			\end{figure}
 		\end{exampleblock}
 	\end{columns}
@@ -277,11 +280,47 @@
 		\vspace{2em}
 		\normalsize \normalfont
 		\begin{itemize}
-			\item A now retracted study\citeme{poore2020} suffered from poor understanding of the used AI methods and overconfident generalization\citeme{gihawi2023}.
-			\item Prompt injection attempts to game AI tools used in review\citeme{gibney2025}.
 			\item Use of LLMs accelerates manuscript output, reduces barriers for non-native English speakers, and diversifies the discovery of prior literature\citeme{kusumegi2025}.
+			\item A now retracted study\citeme{poore2020} suffered from poor understanding of the used AI methods and overconfident generalization\citeme{gihawi2023}.
 		\end{itemize}
 	\end{columns}
+\end{frame}
+
+
+\begin{frame}{At times a fluid transition from slop to fraud}
+ \begin{columns}[T,onlytextwidth]
+   \hspace*{-0.7cm} 
+ 	\column{0.60\textwidth}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{genai/fcell-11-1339390-g002.jpg}
+		\caption{Scientifically incorrect diagram of the JAK-STAT signaling pathway generated with Midjourney and published\citeme{guo2024}}
+	\end{figure}
+	 \column{0.4\textwidth}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/fakeauthors.png}
+	\end{figure}
+ \end{columns}
+	\begin{itemize}
+		\item \href{https://www.linkedin.com/posts/wvdaalst_academicintegrity-generativeai-science-activity-7435761906608570368-_oLj}{LinkedIn post} about a scheme where AI-generated fake papers are uploaded under the names of real, unaware scientists in order to inflate the fraudster's academic reputation.\citeme{vanDerAalst2026}
+		\item Prompt injection attempts to game AI tools used in review\citeme{gibney2025}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{LLM slop: An issue of incentives and objectives}
+	%\metroset{block=fill}
+	\begin{block}{Incentives stemming from LLM training evaluation}
+		\begin{itemize}  
+			\item Hallucinations in LLMs are inevitable with the current model training approach and its main objectives.\footnote{For example, most industry benchmarks use \emph{0-1 scoring}, where a correct answer earns 1 point and both a wrong answer and abstention earn 0 points} \citeme{kalai2024,kalai2025}.
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Incentives in human psychology}
+		\begin{itemize}
+			\item Overconfidence enhances a person's social status, and allows them to exert influence over groups despite poor performance\citeme{anderson2012, ronay2019}.
+			\item The brain treats confidence expressed by others as information about expected reward or success; a strong signal in the ventromedial prefrontal cortex (vmPFC) is recorded in fMRI studies\citeme{campbell-meiklejohn2016, molenberghs2016}.
+			
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
@@ -352,13 +391,23 @@
 \end{frame}
 
 \begin{frame}{Conclusive fabrication and generation is hard, but getting easier}
-	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{genai/fcell-11-1339390-g002.jpg}
-		\caption{Scientifically incorrect diagram of the JAK-STAT signaling pathway generated with Midjourney and published\citeme{guo2024}}
-	\end{figure}
+		\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.5\textwidth}
+		\begin{figure}
+			\vspace{1.3em}
+			\includegraphics[width=\textwidth]{figures/image-1578011623393}
+			\caption{One of \href{https://pubpeer.com/publications/7CE738CC0FB797AB86CC8BE8463B7A}{multiple image manipulations} spotted by Elisabeth Bik in \citeme{cheng2013}.}
+		\end{figure}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/F3-Last-3-digits-2021-07-05.png}
+			\caption{Anomalies in fabricated data\citeme{datacolada98} exposes fraud in influential study about dishonesty\citeme{shu2012}.}
+		\end{figure}		
+	\end{columns}
 	\begin{itemize}
 		\item In 2016, the 3.8\% of published papers containing problematic figures\citeme{Bik2016} could be identified with a trained eye \citeme{Bik2019}.
-		\item In 2024, even experts fail to reliably identify fabricated data among histological images\citeme{Hartung2024}
+		\item Changes in publication culture could be beneficial to scientific rigor.\citeme{Akbashev2023}
 	\end{itemize}
 \end{frame}
 
@@ -367,7 +416,7 @@
 		\includegraphics[width=0.8\textwidth]{genai/replicate-prediction-4zem388agxrmt0cwppm91frc74.png}
 	\end{figure}
 		\begin{itemize}
-		\item AI-generated content can be invisibly and robustly watermarked.\citeme{Fernandez2023, Zhao2024}
+		\item In 2024, even experts fail to reliably identify fabricated data among histological images\citeme{Hartung2024}
 	\end{itemize}
 \end{frame}
 
@@ -376,7 +425,7 @@
 		\includegraphics[width=0.8\textwidth]{genai/replicate-prediction-pjqgy2y8f5rmy0cwpptt789wz8.png}
 	\end{figure}
 	\begin{itemize}
-		\item Changes in publication culture could be beneficial to scientific rigor.\citeme{Akbashev2023}
+		\item AI-generated content can be invisibly and robustly watermarked.\citeme{Fernandez2023, Zhao2024}
 	\end{itemize}
 \end{frame}
 
