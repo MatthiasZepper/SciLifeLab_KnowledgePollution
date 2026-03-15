@@ -34,7 +34,7 @@
 
 \title{A new threat to science?}
 \subtitle{Knowledge pollution by AI slop}
-\date{March 11, 2026}
+\date{March 13, 2026}
 \author{Matthias Zepper, PhD}
 \institute{National Genomics Infrastructure Sweden, SciLifeLab \par\vfill\par
 \includegraphics[width=1.5cm]{./additional_graphics/github_logo.png} \linebreak
@@ -55,11 +55,11 @@
 		\column{0.5\textwidth}
 		\vspace{1em}
 		\begin{itemize}
-			\item I shared an \href{https://www.theatlantic.com/science/2026/01/ai-slop-science-publishing/685704/?gift=C0nm5xfcKfuny8CSrWIoxFbcYfWmEt_nDW7I7O58glM&utm_source=copy-link&utm_medium=social&utm_campaign=share}{article} from \emph{The Atlantic}\citeme{Andersen2026}. 
+			\item I shared an \href{https://www.theatlantic.com/science/2026/01/ai-slop-science-publishing/685704/}{article} from \emph{The Atlantic}\citeme{Andersen2026}. 
 			\item It describes scientific publishing issues:\linebreak
 			\begin{itemize}
 			\item Non-existing (hallucinated) references are commonplace.\citeme{Blum2023}
-			\item Submissions to journals, conference proceedings and preprint servers have spiked.
+			\item Submissions to journals, conference proceedings and preprint servers have spiked.\citeme{Hanson2023}
 			\item In a dystopian future, fraud is rampant, while AIs write and review most papers.
 			\end{itemize}
 		\end{itemize}
@@ -122,7 +122,7 @@
 		\caption{A self-reinforcing knowledge cycle}
 	\end{figure}
 	\begin{itemize}
-		\item A Wikipedia edit war unfolds. Other users restore the name \emph{Wilhelm} multiple times, citing news coverage.
+		\item A Wikipedia edit war unfolds. Other users reintroduce the name \emph{Wilhelm} multiple times, citing news coverage.
 		\item Major outlets like \href{https://www.spiegel.de/politik/deutschland/in-eigener-sache-falscher-wilhelm-bei-minister-guttenberg-a-606912.html}{Spiegel} or \href{https://taz.de/Wikipedia-Manipulation/!5168061/}{TAZ} publish corrections in the following days.
 	\end{itemize}
 \end{frame}
@@ -192,15 +192,22 @@
 \end{frame}
 
 \begin{frame}{People have been wrong on the internet before}
-	\begin{figure}
-		\includegraphics[width=0.3\textwidth]{figures/xkcd_duty_calls.png}
-		\caption{XKCD \href{https://xkcd.com/386}{Duty calls} by Randall Munroe, CC BY-NC 2.5}
-	\end{figure}
-	\vspace{-1em}
-	\begin{itemize}
-		\item Training data like the FineWeb\footnote{\tiny The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.} dataset (44TB) is carefully curated.\citeme{Penedo2024}
-		\item Expert human curation capacity is scarce.\citeme{Hanson2023}\footnote{\tiny A 47\% growth in the global number of published papers has been recorded between 2016 and 2022}.
-	\end{itemize}
+   \begin{columns}[T,onlytextwidth]
+	\hspace*{-0.7cm} 
+	\column{0.35\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.9\textwidth]{figures/xkcd_duty_calls.png}
+			\caption{XKCD \href{https://xkcd.com/386}{Duty calls} by Randall Munroe\linebreak CC BY-NC 2.5}
+		\end{figure}
+	\column{0.8\textwidth}
+		\vspace{2em}
+		\begin{itemize}
+			\item Training data like the FineWeb\footnote{\footnotesize The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.} dataset (44TB) is carefully curated.\citeme{Penedo2024}
+			\item Expert human curation capacity is scarce.\citeme{Hanson2023}\footnote{\footnotesize A 47\% growth in the global number of published papers has been recorded between 2016 and 2022}.
+			\item New tools like the \href{https://www.irit.fr/~Guillaume.Cabanac/problematic-paper-screener}{Problematic Paper Screener}\citeme{cabanac2022} or \href{https://imagetwin.ai}{ImageTwin} can detect slop and fraud.
+		\end{itemize}
+		\vfill
+	\end{columns}
 \end{frame}
 
 
@@ -209,6 +216,14 @@
 \section{Ways of being wrong}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}[standout]{}
+	In some errors, there's value, \linebreak
+	but only now and then. \linebreak
+	Not all who sail for India, too, \linebreak
+	discover America again. \linebreak
+	\par \emph{ \footnotesize Erich Kästner, Der schöpferische Irrtum (1948)}
+\end{frame}
 
 \begin{frame}{Ways of being wrong}
 	\begin{columns}[T,onlytextwidth]
@@ -280,8 +295,9 @@
 		\vspace{2em}
 		\normalsize \normalfont
 		\begin{itemize}
-			\item Use of LLMs accelerates manuscript output, reduces barriers for non-native English speakers, and diversifies the discovery of prior literature\citeme{kusumegi2025}.
-			\item A now retracted study\citeme{poore2020} suffered from poor understanding of the used AI methods and overconfident generalization\citeme{gihawi2023}.
+			\item Use of LLMs accelerates manuscript output, reduces barriers for non-native English speakers, and diversifies the discovery of prior literature.\citeme{kusumegi2025}
+			\item A now retracted study\citeme{poore2020} suffered from poor understanding of the used AI methods and overconfident generalization.\citeme{gihawi2023}
+			\item Changes in publication culture could be beneficial to scientific rigor.\citeme{Akbashev2023}
 		\end{itemize}
 	\end{columns}
 \end{frame}
@@ -301,8 +317,8 @@
 	\end{figure}
  \end{columns}
 	\begin{itemize}
-		\item \href{https://www.linkedin.com/posts/wvdaalst_academicintegrity-generativeai-science-activity-7435761906608570368-_oLj}{LinkedIn post} about a scheme where AI-generated fake papers are uploaded under the names of real, unaware scientists in order to inflate the fraudster's academic reputation.\citeme{vanDerAalst2026}
-		\item Prompt injection attempts to game AI tools used in review\citeme{gibney2025}.
+		\item \href{https://www.linkedin.com/posts/wvdaalst_academicintegrity-generativeai-science-activity-7435761906608570368-_oLj}{AI-generated fake papers are uploaded under the names of real, unaware scientists} in order to inflate the fraudster's academic reputation.\citeme{vanDerAalst2026}
+		\item Prompt injection attempts to game AI tools used in review.\citeme{gibney2025}
 	\end{itemize}
 \end{frame}
 
@@ -325,13 +341,24 @@
 
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
-\section{Cherrypicking}
+\section{Cherry picking}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \begin{frame}[standout]{}
 	So convenient a thing is it to be a reasonable creature, since it enables one to find or make a reason for everything one has a mind to do. 
 	\par \emph{ \footnotesize Benjamin Franklin, Autobiography (1791)}
+\end{frame}
+
+\begin{frame}{Interpretation of data depends on context}
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{figures/cancer-deaths-rate-and-age-standardized-rate-index}
+		\caption{Estimated number of deaths, crude death rate (population), and age-standardized death rate from all cancers 1980-2020.\citeme{owid-age-standardization}}
+	\end{figure}
+	\vspace{-1em}
+	\begin{itemize}
+		\item AI summaries may provide context that a simple search fails to produce, but carry a greater risk for confirmation bias / false balance.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Knowledge pollution regarding vaccine safety}
@@ -402,12 +429,12 @@
 		\column{0.5\textwidth}
 		\begin{figure}
 			\includegraphics[width=\textwidth]{figures/F3-Last-3-digits-2021-07-05.png}
-			\caption{Anomalies in fabricated data\citeme{datacolada98} exposes fraud in influential study about dishonesty\citeme{shu2012}.}
+			\caption{Anomalies in fabricated data\citeme{datacolada98} expose fraud in influential study about dishonesty\citeme{shu2012}.}
 		\end{figure}		
 	\end{columns}
 	\begin{itemize}
+		\item Data simulators developed for narrative, immersive learning instead of benchmarking like \emph{Eduomics}\citeme{sola2026} could be abused for fraud.
 		\item In 2016, the 3.8\% of published papers containing problematic figures\citeme{Bik2016} could be identified with a trained eye \citeme{Bik2019}.
-		\item Changes in publication culture could be beneficial to scientific rigor.\citeme{Akbashev2023}
 	\end{itemize}
 \end{frame}
 
@@ -440,6 +467,35 @@
 	\begin{figure}
 		\includegraphics[width=\textwidth]{genai/replicate-prediction-ark2ada1fnrmr0cwpm1v5vfekg.png}
 	\end{figure}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Summary}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+\begin{frame}{Is AI a new threat to science?}
+	\begin{block}{Scientific process}
+		\begin{itemize}
+			\item Expert human curation capacity is scare. Generative AI strains peer review with slop and conclusive fraud. \remark{Improved detection tools? } 
+			\item AI enables powerful new research tools, e.g. for data analysis.
+			\remark{Criteria for assessing academic merits in the age of AI-Ghostwriters}   
+		\end{itemize}
+	\end{block}
+	\begin{block}{Scientific results}
+		\begin{itemize}
+			\item The provisional, revisable nature of findings is known to scientists.
+			\remark{Findable, Accessible, Interoperable, and Reusable (FAIR) data}  
+		\end{itemize}
+	\end{block}
+	\begin{block}{Science-informed policy}
+		\begin{itemize}
+			\item AI-enabled production of low-quality or misleading research for political or economic gains meets weakened institutions. 
+			\remark{Social media speed + polarization, anti-elitist distrust of experts}   
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}{Thank you for your attention - it's all you need\citeme{Vaswani2017}}
