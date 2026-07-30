@@ -65,14 +65,16 @@
 			\caption{Kandinsky 2.2 (07/2023)}
 		\end{figure}
 	\end{columns}
-	\vspace{2em}
-	\textbf{AI application: One or several models combined with context management (memory, web search), tool use and user interface}
+	\begin{itemize}
+		\item \textbf{AI application:} Model(s) combined with context management (memory, web search), tool use and user interface.
+		\item \textbf{Agent:} AI application with increased autonomy.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{2026: Achievements supported by frontier models}
 	\begin{itemize}
-		\item \textbf{Biology:} Google’s AI Co-Scientist proposes biological hypotheses for drug-repurposing candidates and epigenetic targets that have successfully survived in vitro validation and wet-lab experiments.\citeme{gottweis2026}
-		\item \textbf{IT:} Anthropic’s Frontier Red Team uses Claude to unearth over 500 validated high-severity zero-day flaws\citeme{lakshmanan2026claude} and identifies mathematical weaknesses in cryptographic algorithms\citeme{anthropic2026cryptographic}.
+		\item \textbf{Biology:} Google’s AI Co-Scientist proposed drug-repurposing candidates and novel epigenetic targets that were later experimentally confirmed\citeme{gottweis2026}. Coding agents are used to modernize scientific software\citeme{openai2026scientificcomputing}.
+		\item \textbf{IT:} Anthropic’s Frontier Red Team uses Claude to unearth over 500 validated high-severity zero-day flaws\citeme{lakshmanan2026claude} and identifies mathematical weaknesses in cryptographic algorithms\citeme{anthropic2026cryptographic}. A frontier lab agent autonomously penetrates production IT-infrastructure in a complex attack.\citeme{huggingface2026agenttimeline}.
 		\item \textbf{Math:} An OpenAI model disproves an 80-year-old Erd\"os conjecture\citeme{openai2026erdos}. Another produces a proof of the 50-year-old Cycle Double Cover Conjecture\citeme{oum2026}. Claude helps refute the 87-year-old Jacobian Conjecture\citeme{paul2026Spatia,thompson2026}. Harmonic’s Aristotle autonomously discovers and formally verifies solutions to eight open group-theory problems\citeme{van2026}.
 	\end{itemize}
 \end{frame}
@@ -87,12 +89,11 @@
 		\column{0.5\textwidth}
 		\vspace{1em}
 		\begin{itemize}
-			\item I shared an \href{https://www.theatlantic.com/science/2026/01/ai-slop-science-publishing/685704/}{article} from \emph{The Atlantic}\citeme{Andersen2026}. 
-			\item It describes scientific publishing issues:\linebreak
+			\item An \href{https://www.theatlantic.com/science/2026/01/ai-slop-science-publishing/685704/}{article} from \emph{The Atlantic}\citeme{Andersen2026} describes scientific publishing issues:\linebreak
 			\begin{itemize}
 			\item Non-existing (hallucinated) references are commonplace.\citeme{Blum2023}
 			\item Submissions to journals, conference proceedings and preprint servers have spiked.\citeme{Hanson2023}
-			\item In a dystopian future, fraud is rampant, while AIs write and review most papers.
+			\item In a dystopian future, fraud is rampant, while AIs write and review most papers: \textbf{Knowledge pollution}
 			\end{itemize}
 		\end{itemize}
 	\end{columns}
@@ -133,7 +134,7 @@
 \begin{frame}{Germany's leading newspapers and magazines fall victim}
 \begin{figure}
 	\includegraphics[width=0.8\textwidth]{figures/bild_guttenberg.jpg}
-	\caption{Front page of German tabloid newspaper \emph{Bild}, February 10}
+	\caption{Front page of German tabloid newspaper \emph{Bild}, February 10, 2009}
 \end{figure}
 \begin{itemize}
 	\item \href{https://de.wikipedia.org/w/index.php?title=Karl-Theodor_zu_Guttenberg&diff=prev&oldid=56419545}{At 21:40 on February 8, an anonymous IP address added}\emph{Wilhelm} to the Wikipedia article on Guttenberg.
@@ -148,11 +149,11 @@
 \begin{frame}{Knowledge pollution by vandalized Wikipedia article}
 	\begin{figure}
 		\includegraphics[width=0.8\textwidth]{genai/replicate-prediction-7f2yykfganrmw0cwpzgbvkkzxm_green.png}
-		\caption{A self-reinforcing knowledge cycle}
+		\caption{A self-reinforcing knowledge cycle, later mocked in  \href{https://www.explainxkcd.com/wiki/index.php/978:_Citogenesis}{XKCD 978 "Citogenesis"} (November 2011)}
 	\end{figure}
 	\begin{itemize}
 		\item A Wikipedia edit war unfolds. Other users reintroduce the name \emph{Wilhelm} multiple times, citing news coverage.
-		\item Major outlets like \href{https://www.spiegel.de/politik/deutschland/in-eigener-sache-falscher-wilhelm-bei-minister-guttenberg-a-606912.html}{Spiegel} or \href{https://taz.de/Wikipedia-Manipulation/!5168061/}{TAZ} publish corrections in the following days.
+		\item Major outlets like \href{https://www.spiegel.de/politik/deutschland/in-eigener-sache-falscher-wilhelm-bei-minister-guttenberg-a-606912.html}{Spiegel} or \href{https://taz.de/Wikipedia-Manipulation/!5168061/}{TAZ} publish corrections in the next days.
 	\end{itemize}
 \end{frame}
 
@@ -173,18 +174,21 @@
 		\end{block}
 \end{frame}
 
+\begin{frame}{Knowledge pollution in scientific literature}
+	\begin{itemize}
+		\item Though citation bias, amplification, and
+		invention, the hypothesis that amyloid $\textsc{\beta}$ is produced by injured skeletal muscles became a popular misconception\citeme{greenberg2009}.
+		\item A brief letter\citeme{porterjick1980} in NEJM now carries an editor's note\footnote{For reasons of public health, readers should be aware that this letter has been "heavily and uncritically cited" as evidence that addiction is rare with opioid therapy.}, because its false citation may have contributed to the North American opioid crisis\citeme{leung2017}. 
+		\item More than 90\% of 750 papers examined used shortcut citations\citeme{standvoss2024}.
+
+	\end{itemize}
+\end{frame}
+
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
 \section{What changes with AI?}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-
-\begin{frame}{Humans can be fooled. AI models, too}
-	\begin{figure}
-		\hspace*{-1cm} 
-		\includegraphics[height=0.97\textheight]{figures/Cliffs.png}
-	\end{figure}
-\end{frame}
 
 \begin{frame}{Some humans want to mislead, some now specifically AI}
 	\begin{columns}[T,onlytextwidth]
@@ -200,6 +204,14 @@
 			\includegraphics[width=\textwidth]{genai/replicate-prediction-xz1ce91fa9rmy0cwqx2vdqw518_crop.png}
 		\end{figure}
 	\end{columns}
+\end{frame}
+
+\begin{frame}{Humans can be fooled (April 1st). AI models, too}
+	\begin{figure}
+		\hspace*{-1cm} 
+		\includegraphics[height=0.84\textheight]{figures/Cliffs.png}
+		\caption{Old slide from my \href{https://github.com/MatthiasZepper/SciLifeLab_TokensOfLove}{\textsc{"Tokens of Love"}} talk, February 2025}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Signal to noise ratio problem: Model collapse scenarios}
@@ -226,7 +238,7 @@
 	\column{0.35\textwidth}
 		\begin{figure}
 			\includegraphics[width=0.9\textwidth]{figures/xkcd_duty_calls.png}
-			\caption{XKCD \href{https://xkcd.com/386}{Duty calls} by Randall Munroe\linebreak CC BY-NC 2.5}
+			\caption{XKCD \href{https://xkcd.com/386}{Duty calls} (386) by Randall Munroe\linebreak CC BY-NC 2.5}
 		\end{figure}
 	\column{0.8\textwidth}
 		\vspace{2em}
@@ -349,74 +361,6 @@
 		\item \href{https://www.linkedin.com/posts/wvdaalst_academicintegrity-generativeai-science-activity-7435761906608570368-_oLj}{AI-generated fake papers are uploaded under the names of real, unaware scientists} in order to inflate the fraudster's academic reputation.\citeme{vanDerAalst2026}
 		\item Prompt injection attempts to game AI tools used in review.\citeme{gibney2025}
 	\end{itemize}
-\end{frame}
-
-\begin{frame}{LLM slop: An issue of incentives and objectives}
-	%\metroset{block=fill}
-	\begin{block}{Incentives stemming from LLM training evaluation}
-		\begin{itemize}  
-			\item Hallucinations in LLMs are inevitable with the current model training approach and its main objectives.\footnote{For example, most industry benchmarks use \emph{0-1 scoring}, where a correct answer earns 1 point and both a wrong answer and abstention earn 0 points} \citeme{kalai2024,kalai2025}.
-		\end{itemize}
-	\end{block}
-	
-	\begin{block}{Incentives in human psychology}
-		\begin{itemize}
-			\item Overconfidence enhances a person's social status, and allows them to exert influence over groups despite poor performance\citeme{anderson2012, ronay2019}.
-			\item The brain treats confidence expressed by others as information about expected reward or success; a strong signal in the ventromedial prefrontal cortex (vmPFC) is recorded in fMRI studies\citeme{campbell-meiklejohn2016, molenberghs2016}.
-			
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
-
-\section{Cherry picking}
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-
-\begin{frame}[standout]{}
-	So convenient a thing is it to be a reasonable creature, since it enables one to find or make a reason for everything one has a mind to do. 
-	\par \emph{ \footnotesize Benjamin Franklin, Autobiography (1791)}
-\end{frame}
-
-\begin{frame}{Interpretation of data depends on context}
-	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{figures/cancer-deaths-rate-and-age-standardized-rate-index}
-		\caption{Estimated number of deaths, crude death rate (population), and age-standardized death rate from all cancers 1980-2020.\citeme{owid-age-standardization}}
-	\end{figure}
-	\vspace{-1em}
-	\begin{itemize}
-		\item AI summaries may provide context that a simple search fails to produce, but carry a greater risk for confirmation bias / false balance.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Knowledge pollution regarding vaccine safety}
-	\begin{columns}[T,onlytextwidth]
-		\column{0.45\textwidth}
-		\begin{figure}
-			\includegraphics[width=\textwidth]{figures/johnson.png}
-		\end{figure}
-		\column{0.55\textwidth}
-		\vspace{4em}
-		\begin{itemize}
-		\item Although the original study\citeme{wakefield1998} was retracted, rebutted \citeme{hviid2019} and vaccine safety concerns addressed\citeme{offit2003}, distrust is growing. 
-		\item An analysis from 2019 suggests that anti-vaccination views will fully dominate Facebook in a decade due to a wide range of potentially attractive narratives\citeme{johnson2020}.
-		\end{itemize}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Political meddling with regulatory authority}
-	\begin{figure}
-		\includegraphics[width=0.9\textwidth]{figures/cdc-vaccine-autism-guidance-dec24.jpg}
-		\caption{\href{https://web.archive.org/web/20251019204746/https://www.cdc.gov/vaccine-safety/about/autism.html}{Previous CDC guidance on vaccine safety}}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Political meddling with regulatory authority}
-	\begin{figure}
-	\includegraphics[width=0.9\textwidth]{figures/cdc-vaccine-autism-guidance-nov25.jpg}
-	\caption{\href{https://www.cdc.gov/vaccine-safety/about/autism.html}{Current CDC guidance on vaccine safety}}
-\end{figure}
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
@@ -552,6 +496,58 @@
 	\end{figure}
 \end{frame}
 
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Cherry picking}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}[standout]{}
+	So convenient a thing is it to be a reasonable creature, since it enables one to find or make a reason for everything one has a mind to do. 
+	\par \emph{ \footnotesize Benjamin Franklin, Autobiography (1791)}
+\end{frame}
+
+\begin{frame}{Interpretation of data depends on context}
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{figures/cancer-deaths-rate-and-age-standardized-rate-index}
+		\caption{Estimated number of deaths, crude death rate (population), and age-standardized death rate from all cancers 1980-2020.\citeme{owid-age-standardization}}
+	\end{figure}
+	\vspace{-1em}
+	\begin{itemize}
+		\item AI summaries may provide context that a simple search fails to produce, but carry a greater risk for confirmation bias / false balance.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Knowledge pollution regarding vaccine safety}
+	\begin{columns}[T,onlytextwidth]
+		\column{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/johnson.png}
+		\end{figure}
+		\column{0.55\textwidth}
+		\vspace{4em}
+		\begin{itemize}
+			\item Although the original study\citeme{wakefield1998} was retracted, rebutted \citeme{hviid2019} and vaccine safety concerns addressed\citeme{offit2003}, distrust is growing. 
+			\item An analysis from 2019 suggests that anti-vaccination views will fully dominate Facebook in a decade due to a wide range of potentially attractive narratives\citeme{johnson2020}.
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Political meddling with regulatory authority}
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{figures/cdc-vaccine-autism-guidance-dec24.jpg}
+		\caption{\href{https://web.archive.org/web/20251019204746/https://www.cdc.gov/vaccine-safety/about/autism.html}{Previous CDC guidance on vaccine safety}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Political meddling with regulatory authority}
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{figures/cdc-vaccine-autism-guidance-nov25.jpg}
+		\caption{\href{https://www.cdc.gov/vaccine-safety/about/autism.html}{Current CDC guidance on vaccine safety}}
+	\end{figure}
+\end{frame}
+
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
 \section{Summary}
@@ -590,7 +586,36 @@
 
 \appendix
 
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Extra slides}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+\begin{frame}{Sycophancy: An issue of incentives and objectives}
+	%\metroset{block=fill}
+	\begin{block}{LLM training evaluation}
+		\begin{itemize}  
+			\item Foundation models training often uses \footnote{For example, most industry benchmarks use \emph{0-1 scoring}, where a correct answer earns 1 point and both a wrong answer and abstention earn 0 points} \citeme{kalai2024,kalai2025}.
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Incentives in human psychology}
+		\begin{itemize}
+			\item Overconfidence enhances a person's social status, and allows them to exert influence over groups despite poor performance\citeme{anderson2012, ronay2019}.
+			\item The brain treats confidence expressed by others as information about expected reward or success; a strong signal in the ventromedial prefrontal cortex (vmPFC) is recorded in fMRI studies\citeme{campbell-meiklejohn2016, molenberghs2016}.
+			
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
 \section{References}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
 \begin{frame}[allowframebreaks]{References}
 \begingroup
 \renewcommand*{\bibfont}{\footnotesize} 
