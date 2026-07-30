@@ -51,85 +51,30 @@
 
 \maketitle
 
-\begin{frame}{Beauty and the Beast: AI in society and science}
+\begin{frame}{Rapid improvements of AI models and applications}
 	\begin{columns}[T,onlytextwidth] 
 		\column{0.5\textwidth}
 		\begin{figure}
-			\includegraphics[width=\textwidth]{genai/replicate-prediction-dey3jgrs31rmt0czmz1s9phvym.png}
+			\includegraphics[width=0.75\textwidth]{genai/replicate-prediction-dey3jgrs31rmt0czmz1s9phvym.png}
 			\caption{Nano Banana 2 (02/2026)}
 		\end{figure}
 		\column{0.5\textwidth}
 		
 		\begin{figure}
-			\includegraphics[width=\textwidth]{genai/replicate-prediction-44ckocbbbv6io2bhfrcnvgtvym.png}
+			\includegraphics[width=0.75\textwidth]{genai/replicate-prediction-44ckocbbbv6io2bhfrcnvgtvym.png}
 			\caption{Kandinsky 2.2 (07/2023)}
 		\end{figure}
 	\end{columns}
+	\vspace{2em}
+	\textbf{AI application: One or several models combined with context management (memory, web search), tool use and user interface}
 \end{frame}
 
-\begin{frame}[fragile]{Feb 2026: Prompt for Nano Banana 2}
-	\begin{lstlisting}[
-		basicstyle=\ttfamily\tiny,
-		breaklines=true,
-		breakatwhitespace=true,
-		breakindent=0pt,
-		columns=fullflexible,
-		frame=single,
-		]
-	Create a scientifically realistic, high-resolution histology image formatted as a two-panel figure (side-by-side panels labeled A and B) comparing Ki-67 immunohistochemical staining in breast carcinoma.
-	
-	- Panel A label: “A. Low Ki-67 Proliferation Index (Low-Grade Tumor)”
-	- Panel B label: “B. High Ki-67 Proliferation Index (High-Grade Tumor)”
-	
-	Style: brightfield microscopy, immunohistochemistry using DAB chromogen with hematoxylin counterstain. Brown nuclear staining represents Ki-67 positivity (DAB). Blue-purple nuclei from hematoxylin counterstain.
-	
-	- Panel A: Sparse brown nuclear staining (approximately 5–10% of tumor nuclei positive). Mostly blue nuclei, well-formed glandular structures, relatively uniform cells.
-	- Panel B: Extensive brown nuclear staining (approximately 60–80% of tumor nuclei positive). Numerous strongly brown nuclei, crowded and pleomorphic cells, higher nuclear density.
-	
-	Realistic breast carcinoma morphology with invasive ductal carcinoma features. 20x objective magnification appearance. Clear tissue architecture and stromal background.
-	
-	Include:
-	- A small magnification scale bar labeled “100 µm” in each panel.
-	- Clear panel letters (“A” and “B”) in upper left corners.
-	- A centered figure title at the top: “Ki-67 Immunohistochemical Staining in Breast Carcinoma”.
-	
-	The image should look like it came from a pathology textbook or peer-reviewed journal figure, with accurate scientific labeling and natural histologic color tones. Do not include any patient identifiers.
-	\end{lstlisting}
+\begin{frame}{2026: Achievements supported by frontier models}
 	\begin{itemize}
-		\item In 2024, expert pathologists failed to reliably identify fabricated data among histological images\citeme{Hartung2024}
+		\item \textbf{Biology:} Google’s AI Co-Scientist proposes biological hypotheses for drug-repurposing candidates and epigenetic targets that have successfully survived in vitro validation and wet-lab experiments.\citeme{gottweis2026}
+		\item \textbf{IT:} Anthropic’s Frontier Red Team uses Claude to unearth over 500 validated high-severity zero-day flaws\citeme{lakshmanan2026claude} and identifies mathematical weaknesses in cryptographic algorithms\citeme{anthropic2026cryptographic}.
+		\item \textbf{Math:} An OpenAI model disproves an 80-year-old Erd\"os conjecture\citeme{openai2026erdos}. Another produces a proof of the 50-year-old Cycle Double Cover Conjecture\citeme{oum2026}. Claude helps refute the 87-year-old Jacobian Conjecture\citeme{paul2026Spatia,thompson2026}. Harmonic’s Aristotle autonomously discovers and formally verifies solutions to eight open group-theory problems\citeme{van2026}.
 	\end{itemize}
-\end{frame}
-
-\begin{frame}{Feb 2026: Fully AI-generated multi-panel figure with labels}
-	\begin{figure}
-		\includegraphics[width=0.8\textwidth]{genai/replicate-prediction-4zem388agxrmt0cwppm91frc74.png}
-	\end{figure}
-	\begin{itemize}
-		\item In 2024, even experts fail to reliably identify fabricated data among histological images\citeme{Hartung2024}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Sharp stain edges are (still) a telltale sign of image fabrication}
-	\begin{columns}[T,onlytextwidth]
-		\hspace*{-0.7cm} 
-		\column{0.8\textwidth}
-		\begin{figure}
-			\includegraphics[width=\textwidth]{genai/replicate-prediction-4zem388agxrmt0cwppm91frc74-commented.png}
-			\caption{Visual inconsistencies and artifacts identified by Prof. Carolina Wählby and a pathologist colleague.}
-		\end{figure}
-		\column{0.3\textwidth}
-		\begin{figure}
-			\includegraphics[width=0.8\textwidth]{additional_graphics/carolina_waehlby.png}
-		\end{figure}
-		\hspace*{3mm}%
-		\parbox{\dimexpr\linewidth-5mm\relax}{%
-			\raggedright
-			\fontsize{7}{9.5}\bfseries\selectfont
-			Prof. Carolina Wählby\\
-			\fontsize{7}{9} \normalfont \selectfont
-			Professor in quantitative microscopy at the Dept. of Information Technology at Uppsala University and SciLifeLab
-		}
-	\end{columns}
 \end{frame}
 
 \begin{frame}{Ross Andersen: Science Is Drowning in AI Slop}
@@ -531,7 +476,70 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{By the way: My title graphic was also a fabrication!}
+\begin{frame}[fragile]{Feb 2026: Prompt for Nano Banana 2}
+	\begin{lstlisting}[
+		basicstyle=\ttfamily\tiny,
+		breaklines=true,
+		breakatwhitespace=true,
+		breakindent=0pt,
+		columns=fullflexible,
+		frame=single,
+		]
+		Create a scientifically realistic, high-resolution histology image formatted as a two-panel figure (side-by-side panels labeled A and B) comparing Ki-67 immunohistochemical staining in breast carcinoma. 		The image should look like it came from a pathology textbook or peer-reviewed journal figure
+		
+		- Panel A label: “A. Low Ki-67 Proliferation Index (Low-Grade Tumor)”
+		- Panel B label: “B. High Ki-67 Proliferation Index (High-Grade Tumor)”
+		
+		Style: brightfield microscopy, immunohistochemistry using DAB chromogen with hematoxylin counterstain. Brown nuclear staining represents Ki-67 positivity (DAB). Blue-purple nuclei from hematoxylin counterstain.
+		
+		- Panel A: Sparse brown nuclear staining (approximately 5–10% of tumor nuclei positive). Mostly blue nuclei, well-formed glandular structures, relatively uniform cells.
+		- Panel B: Extensive brown nuclear staining (approximately 60–80% of tumor nuclei positive). Numerous strongly brown nuclei, crowded and pleomorphic cells, higher nuclear density.
+		
+		Realistic breast carcinoma morphology with invasive ductal carcinoma features. 20x objective magnification appearance. Clear tissue architecture and stromal background.
+		
+		Include:
+		- A small magnification scale bar labeled “100 µm” in each panel.
+		- Clear panel letters (“A” and “B”) in upper left corners.
+		- A centered figure title at the top: “Ki-67 Immunohistochemical Staining in Breast Carcinoma”.
+	\end{lstlisting}
+	\begin{itemize}
+		\item In 2024, expert pathologists failed to reliably identify fabricated data among histological images\citeme{Hartung2024}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Feb 2026: Fully AI-generated multi-panel figure with labels}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{genai/replicate-prediction-4zem388agxrmt0cwppm91frc74.png}
+	\end{figure}
+	\begin{itemize}
+		\item In 2024, even experts fail to reliably identify fabricated data among histological images\citeme{Hartung2024}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Sharp stain edges are (still) a telltale sign of image fabrication}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.8\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{genai/replicate-prediction-4zem388agxrmt0cwppm91frc74-commented.png}
+			\caption{Visual inconsistencies and artifacts identified by Prof. Carolina Wählby and a pathologist colleague.}
+		\end{figure}
+		\column{0.3\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.8\textwidth]{additional_graphics/carolina_waehlby.png}
+		\end{figure}
+		\hspace*{3mm}%
+		\parbox{\dimexpr\linewidth-5mm\relax}{%
+			\raggedright
+			\fontsize{7}{9.5}\bfseries\selectfont
+			Prof. Carolina Wählby\\
+			\fontsize{7}{9} \normalfont \selectfont
+			Professor in quantitative microscopy at the Dept. of Information Technology at Uppsala University and SciLifeLab
+		}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Casual exposure: My title graphic was also a fabrication!}
 	\begin{figure}
 		\includegraphics[width=\textwidth]{genai/replicate-prediction-apsdpwkzehrmt0cwpkt923raj0.jpg}
 		\caption{Unfortunately, SciLifeLab Stockholm isn't situated next to a nice park...}
