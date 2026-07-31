@@ -571,17 +571,29 @@
 Why should I believe that?
 \end{frame}
 
-\begin{frame}{Accountability and warrants: Why should I believe that?}
+\begin{frame}{Enlightenment: Authority must be auditable and questioned}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{genai/replicate-prediction-3xd0hxdy8xrmw0czmzzs4h56kg.png}
+	\end{figure}
+	\begin{itemize}
+		\item 1660: Take nobody's word for it (Nullius in verba) \remark{Motto of the Royal Society}
+		\item 1934: Falsifiability is key to science \remark{Karl Popper}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Accountability and warrants}
 	\begin{columns}[T,onlytextwidth]
-		\column{0.3\textwidth}	
+		\column{0.3\textwidth}
+		\vspace{9em}	
 		\begin{figure}
-			\includegraphics[width=\textwidth]{genai/replicate-prediction-mzxz2tykk9rmt0czmzsawg0tp4}
+			\includegraphics[width=\textwidth]{genai/replicate-prediction-dey3jgrs31rmt0czmz1s9phvym.png}
 		\end{figure}
 		\column{0.7\textwidth}
 		\vspace{1em}
-		\begin{block}{Authority - Who said it?}
+		\begin{block}{Authority}
 			\begin{itemize}
-				\item Truth by deduction from authoritative premises and persons
+				\item Truth by disputation and deduction from authoritative premises and persons
 				\remark{Ancient Greek natural philosophy}
 				\remark{High-impact journals, Governmental institutions} 
 			\end{itemize}
@@ -591,40 +603,50 @@ Why should I believe that?
 			\item Reproducibility: Reporting an experiment in circumstantial detail (Robert Boyle)
 			\item Standardisation and controlled vocabulary (Linnaeus)
 			\item Statistics: Randomisation, controls, the null hypothesis, significance. (R. A. Fisher et al.)
-			\remark{Science requires falsifiability (Karl Popper)} 
 		\end{itemize}
 	\end{block}
 	\end{columns}
 \end{frame}
 
 
-\begin{frame}{Challenges}
-	\begin{block}{Scientific process}
+
+\begin{frame}{I am optimistic regarding procedural improvements}
+	\begin{block}{The scientific process is continuously improved}
 		\begin{itemize}
-			\item Expert human curation capacity is scare. Generative AI strains peer review with slop and conclusive fraud. \remark{Improved detection tools? } 
+			\item Data repositories with FAIR data.
+			\item Standardized, containerized data analysis pipelines.
+			\item Preprints, Open Access, Preregistration of studies.  
+		\end{itemize}
+	\end{block}
+	\begin{block}{Solvable challenges:}
+		\begin{itemize}
+			\item Expert human curation capacity is scare. Organized skepticism of the community (Merton) is strained by slop (volume) and conclusive fraud. \remark{Improved detection tools? New forms of publications?} 
 			\item AI enables powerful new research tools, e.g. for data analysis.
-			\remark{Criteria for assessing academic merits in the age of AI-Ghostwriters}   
-		\end{itemize}
-	\end{block}
-	\begin{block}{Scientific results}
-		\begin{itemize}
-			\item The provisional, revisable nature of findings is known to scientists.
-			\remark{Findable, Accessible, Interoperable, and Reusable (FAIR) data}  
-		\end{itemize}
-	\end{block}
-	\begin{block}{Science-informed policy}
-		\begin{itemize}
-			\item AI-enabled production of low-quality or misleading research for political or economic gains meets weakened institutions. 
-			\remark{Social media speed + polarization, anti-elitist distrust of experts}   
+			\remark{Explainable, auditable AI}
+			\item Responsible application of AI.
+			\remark{New legislation and regulations} 
 		\end{itemize}
 	\end{block}
 \end{frame}
 
-\begin{frame}{Thank you for your attention - it's all you need\citeme{Vaswani2017}}
-\begin{figure}
-	\includegraphics[width=\textwidth]{figures/IgnorantCalvin.jpg}
-	\caption{\href{https://www.gocomics.com/calvinandhobbes/1993/01/05}{Calvin and Hobbes by Bill Watterson} for January 05, 1993}
-\end{figure}
+\begin{frame}[standout]{}
+	It is so convenient to be immature. If I have a book that thinks for me, a pastor who acts as my conscience, a doctor who assesses my diet for me, and so on, then I don’t need to make any effort myself. I don’t need to think, as long as I can pay; others will take care of that tedious business for me.
+	\par \emph{ \footnotesize Immanuel Kant, Beantwortung der Frage: Was ist Aufklärung? (1784)}
+\end{frame}
+
+\begin{frame}{Sapere aude: Kant's warning about outsourcing judgment}
+	\begin{columns}[T,onlytextwidth]
+		\column{0.4\textwidth}	
+		\begin{figure}
+			\includegraphics[width=\textwidth]{genai/replicate-prediction-mzxz2tykk9rmt0czmzsawg0tp4.png}
+		\end{figure}
+		\column{0.6\textwidth}
+		\vspace{5em}
+		\begin{itemize}
+		\item Enlightenment is the exit from self-incurred immaturity caused not by lack of intellect, but by lack of resolve.
+		\item Judgement is not a possession. It is a practice built over decades and maintained only by use.
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 \appendix
@@ -638,19 +660,25 @@ Why should I believe that?
 
 \begin{frame}{Sycophancy: An issue of incentives and objectives}
 	%\metroset{block=fill}
-	\begin{block}{LLM training evaluation}
+	\begin{block}{Basic LLM training evaluation incentives}
 		\begin{itemize}  
-			\item Foundation models training often uses \footnote{For example, most industry benchmarks use \emph{0-1 scoring}, where a correct answer earns 1 point and both a wrong answer and abstention earn 0 points} \citeme{kalai2024,kalai2025}.
+			\item While training foundation models, typically only correct answers are rewarded \footnote{For example, most industry benchmarks use \emph{0-1 scoring}, where a correct answer earns 1 point and both a wrong answer and abstention earn 0 points} \citeme{kalai2024,kalai2025}.
 		\end{itemize}
 	\end{block}
 	
-	\begin{block}{Incentives in human psychology}
+	\begin{block}{Fine-tuning by reinforcement learning from human feedback (RLHF)}
 		\begin{itemize}
 			\item Overconfidence enhances a person's social status, and allows them to exert influence over groups despite poor performance\citeme{anderson2012, ronay2019}.
 			\item The brain treats confidence expressed by others as information about expected reward or success; a strong signal in the ventromedial prefrontal cortex (vmPFC) is recorded in fMRI studies\citeme{campbell-meiklejohn2016, molenberghs2016}.
-			
 		\end{itemize}
 	\end{block}
+\end{frame}
+
+\begin{frame}{Thank you for your attention - it's all you need\citeme{Vaswani2017}}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/IgnorantCalvin.jpg}
+		\caption{\href{https://www.gocomics.com/calvinandhobbes/1993/01/05}{Calvin and Hobbes by Bill Watterson} for January 05, 1993}
+	\end{figure}
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
